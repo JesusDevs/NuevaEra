@@ -3,7 +3,11 @@ package com.example.nuevaera.remote
 import android.util.Log
 import androidx.lifecycle.LiveData
 import com.example.nuevaera.local.ProductDao
+import com.example.nuevaera.pojo.ProductDetail
 import com.example.nuevaera.pojo.ProductoResponseItem
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class ProductRepository(private val dao: ProductDao) {
 
@@ -27,5 +31,36 @@ class ProductRepository(private val dao: ProductDao) {
         } catch (t: Throwable) {
             Log.e("ERROR CORUTINA", t.message.toString())
         }
+    }
+
+    //otra forma de repo corutinas
+
+    fun getProductDetailApi(id: Int) = CoroutineScope(Dispatchers.IO).launch {
+
+        val service = kotlin.runCatching { RetrofitProduct.getRetrofitInstance().getProductDetail(id) }
+        service.onSuccess {
+            when(it.code()) {
+
+                in 200..299 -> it.body()?.let { details ->
+                    dao.insertOneProductDetails(details)
+                    Log.e("detail", it.toString())
+                }
+
+                in 300..599 -> Log.e("ERROR", it.errorBody().toString())
+                else -> Log.d("ERROR", it.errorBody().toString())
+
+            }
+        }
+
+        service.onFailure {
+
+            Log.e("ERROR", it.message.toString())
+
+        }
+
+    }
+
+    fun getProductDetail(id: Int):LiveData<ProductDetail>{
+        return dao.getOneProductDetails(id)
     }
 }

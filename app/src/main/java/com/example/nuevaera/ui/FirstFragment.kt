@@ -49,7 +49,7 @@ class FirstFragment : Fragment() {
         adapter.selectedItem().observe(viewLifecycleOwner,{
             it?.let{
                 val bundle = Bundle()
-                bundle.putString("id", it.id.toString())
+                bundle.putInt("id", it.id)
                 bundle.putString("img",it.image)
                 findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment,bundle)
             }

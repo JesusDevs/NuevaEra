@@ -1,6 +1,7 @@
 package com.example.nuevaera.ui
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -18,15 +19,15 @@ import com.example.nuevaera.databinding.FragmentSecondBinding
 class SecondFragment : Fragment() {
     private lateinit var binding: FragmentSecondBinding
     private val viewModel: ProductViewModel by activityViewModels()
-    var idProduct: String = ""
+    var idProduct: Int = 0
     var imagen: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
 
-            idProduct = it.getString("id","")
-            imagen = it.getString("img","")
+            idProduct = it.getInt("id",0)
+            imagen = it.getString("image","")
 
         }
 
@@ -41,8 +42,21 @@ class SecondFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        viewModel.getProductDetail(idProduct).observe(viewLifecycleOwner,{
+            it?.let {
+
+                Log.d("id2", id.toString())
+
+                binding.nameEd2.setText(it.name)
+                binding.descriptionEd2.setText(it.description)
+                binding.lastPriceEd.setText(it.lastPrice)
+                binding.precioEd2.setText(it.price)
+
+                Glide.with(binding.imageView2).load(it.image).fitCenter().into(binding.imageView2)
 
 
+            }
+        })
 
 
 
