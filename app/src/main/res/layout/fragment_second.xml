@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.SecondFragment">
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="30dp"
+        android:text="volver"
+        app:iconTint="#172B29"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="395dp"
+        android:layout_height="261dp"
+        android:layout_marginTop="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.441"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/nameEd2"
+        android:layout_width="203dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="29dp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="@string/titulo"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display4"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <TextView
+        android:id="@+id/precioEd2"
+        android:layout_width="203dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="15dp"
+        android:text="TextView"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lastPriceEd" />
+
+    <TextView
+        android:id="@+id/lastPriceEd"
+        android:layout_width="203dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="60dp"
+        android:text="TextView"
+        android:textColor="#E91E63"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/descriptionEd2" />
+
+    <TextView
+        android:id="@+id/descriptionEd2"
+        android:layout_width="203dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="14dp"
+        android:text="TextView"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameEd2" />
+
+    <Button
+        android:id="@+id/btnBuy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginBottom="30dp"
+        android:text="Comprar"
+        app:iconTint="#293D4E"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:rippleColor="#CFB5B5" />
+</androidx.constraintlayout.widget.ConstraintLayout>
