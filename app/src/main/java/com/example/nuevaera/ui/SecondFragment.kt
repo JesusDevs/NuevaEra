@@ -1,5 +1,6 @@
 package com.example.nuevaera.ui
 
+
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,7 +9,6 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
-import com.bumptech.glide.Glide
 import com.example.nuevaera.R
 import com.example.nuevaera.databinding.FragmentSecondBinding
 
