@@ -10,6 +10,6 @@ interface ProductAPI {
     @GET("products/")
     suspend fun getProductAllItem(): Response<List<ProductoResponseItem>>
 
-    @GET("details/{id}")
-    suspend fun getProductDetail(@Path("id") id: Int): Response<ProductDetail>
+    @GET("details/")
+    suspend fun getProductDetail() : Response<List<ProductDetail>>
 }

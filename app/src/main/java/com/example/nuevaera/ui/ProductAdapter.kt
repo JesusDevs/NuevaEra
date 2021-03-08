@@ -24,20 +24,21 @@ class ProductAdapter : RecyclerView.Adapter<ProductAdapter.ProductVH>() {
         notifyDataSetChanged()
     }
 
-    inner class ProductVH(private val binding:ProductItemBinding) :
-    RecyclerView.ViewHolder(binding.root),View.OnClickListener{
+    inner class ProductVH(private val binding: ProductItemBinding) :
+        RecyclerView.ViewHolder(binding.root), View.OnClickListener {
 
         @SuppressLint("SetTextI18n")
-        fun bind(productoResponseItem: ProductoResponseItem){
-            with(binding){
+        fun bind(productoResponseItem: ProductoResponseItem) {
+            with(binding) {
 
                 nameEd.text = productoResponseItem.name
-                priceEd.text= "Precio : $ ${productoResponseItem.price}"
-                IDed.text=productoResponseItem.id.toString()
+                priceEd.text = "Precio : $ ${productoResponseItem.price}"
+                IDed.text = productoResponseItem.id.toString()
 
                 Glide.with(imageView)
                     .load(productoResponseItem.image)
-                    .centerCrop()
+                    .fitCenter()
+                    .circleCrop()
                     .into(imageView)
 
             }
@@ -47,21 +48,21 @@ class ProductAdapter : RecyclerView.Adapter<ProductAdapter.ProductVH>() {
         }
 
         override fun onClick(p0: View?) {
-           selectedItem.value = listProductItem[adapterPosition]
+            selectedItem.value = listProductItem[adapterPosition]
         }
 
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductVH {
-       return ProductVH(ProductItemBinding.inflate(LayoutInflater.from(parent.context)))
+        return ProductVH(ProductItemBinding.inflate(LayoutInflater.from(parent.context)))
     }
 
     override fun onBindViewHolder(holder: ProductVH, position: Int) {
-       val productItem = listProductItem[position]
+        val productItem = listProductItem[position]
         holder.bind(productItem)
     }
 
     override fun getItemCount(): Int = listProductItem.size
-    }
+}
 
 

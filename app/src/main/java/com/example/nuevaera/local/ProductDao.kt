@@ -21,7 +21,7 @@ interface ProductDao {
     fun getProductByID(id: String): LiveData<ProductoResponseItem>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insertOneProductDetails(detail: ProductDetail)
+    suspend fun insertOneProductDetails(detail: List<ProductDetail>)
 
 
     @Query("SELECT * FROM  productDetail WHERE id=:id")

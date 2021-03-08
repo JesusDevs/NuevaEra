@@ -48,9 +48,13 @@ class FirstFragment : Fragment() {
 
         adapter.selectedItem().observe(viewLifecycleOwner,{
             it?.let{
+
+                //pasando datos con bundle opcional
                 val bundle = Bundle()
                 bundle.putInt("id", it.id)
-                bundle.putString("img",it.image)
+               //pasando datos entre fragments con viewModel
+
+                viewModel.selected(it)
                 findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment,bundle)
             }
         })

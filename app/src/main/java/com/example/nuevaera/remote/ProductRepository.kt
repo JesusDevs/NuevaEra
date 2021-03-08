@@ -32,9 +32,32 @@ class ProductRepository(private val dao: ProductDao) {
             Log.e("ERROR CORUTINA", t.message.toString())
         }
     }
+    suspend fun getDetailProductWithCourutines() {
+        Log.d("REPOSITORY", "Utilizando corrutinas")
+        try {
+            val response = RetrofitProduct.getRetrofitInstance().getProductDetail()
+            when (response.isSuccessful) {
+                true -> response.body()?.let {
+                    //aca se inserta en la base de datos
+                    dao.insertOneProductDetails(it)
+                }
+                false -> Log.d("ERROR", "${response.code()}: ${response.errorBody()} ")
+            }
+        } catch (t: Throwable) {
+            Log.e("ERROR CORRUTINA", t.message.toString())
+        }
+    }
+
+
+    //metodo para traer detalle del producto selectionado por ID
+
+    fun getProductDetail(id: Int):LiveData<ProductDetail>{
+        return dao.getOneProductDetails(id)
+    }
+
 
     //otra forma de repo corutinas
-
+/*
     fun getProductDetailApi(id: Int) = CoroutineScope(Dispatchers.IO).launch {
 
         val service = kotlin.runCatching { RetrofitProduct.getRetrofitInstance().getProductDetail(id) }
@@ -58,9 +81,7 @@ class ProductRepository(private val dao: ProductDao) {
 
         }
 
-    }
+    }*/
 
-    fun getProductDetail(id: Int):LiveData<ProductDetail>{
-        return dao.getOneProductDetails(id)
-    }
+
 }

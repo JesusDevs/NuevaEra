@@ -10,15 +10,17 @@
         android:id="@+id/btnBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="25dp"
         android:layout_marginBottom="30dp"
         android:text="volver"
         app:iconTint="#172B29"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/creditEd" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/imagen_2"
         android:layout_width="395dp"
         android:layout_height="261dp"
         android:layout_marginTop="25dp"
@@ -29,60 +31,71 @@
         tools:src="@tools:sample/avatars" />
 
     <TextView
-        android:id="@+id/nameEd2"
-        android:layout_width="203dp"
-        android:layout_height="26dp"
-        android:layout_marginStart="92dp"
-        android:layout_marginTop="29dp"
-        android:fontFamily="sans-serif-condensed"
-        android:text="titulo"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display4"
-        android:textColor="#FFFFFF"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
-
-    <TextView
         android:id="@+id/precioEd2"
         android:layout_width="203dp"
         android:layout_height="26dp"
         android:layout_marginStart="92dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="5dp"
         android:text="TextView"
         android:textColor="#FFFFFF"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lastPriceEd" />
 
     <TextView
+        android:id="@+id/creditEd"
+        android:layout_width="203dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="5dp"
+        android:text="TextView"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/precioEd2" />
+
+    <TextView
         android:id="@+id/lastPriceEd"
         android:layout_width="203dp"
         android:layout_height="26dp"
         android:layout_marginStart="92dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="5dp"
         android:text="TextView"
         android:textColor="#E91E63"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/descriptionEd2" />
+        app:layout_constraintTop_toBottomOf="@+id/name2" />
 
     <TextView
-        android:id="@+id/descriptionEd2"
+        android:id="@+id/name2"
         android:layout_width="203dp"
-        android:layout_height="26dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="92dp"
-        android:layout_marginTop="14dp"
+        android:layout_marginTop="5dp"
+        android:text="TextView"
+        android:textColor="#FFFDFD"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/descriptionEd" />
+
+    <TextView
+        android:id="@+id/descriptionEd"
+        android:layout_width="203dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="5dp"
         android:text="TextView"
         android:textColor="#FFFFFF"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameEd2" />
+        app:layout_constraintTop_toBottomOf="@+id/imagen_2" />
 
     <Button
         android:id="@+id/btnBuy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
+        android:layout_marginTop="10dp"
         android:layout_marginBottom="30dp"
         android:text="Comprar"
         app:iconTint="#293D4E"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/creditEd"
         app:rippleColor="#CFB5B5" />
 </androidx.constraintlayout.widget.ConstraintLayout>
