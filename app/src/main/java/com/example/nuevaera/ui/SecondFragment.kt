@@ -51,12 +51,13 @@ class SecondFragment : Fragment() {
             it?.let {
                 viewModel.getDetailProductoById(it.id).observe(viewLifecycleOwner, {
                     with(binding) {
-                        Glide.with(imagen2).load(it.image).circleCrop().into(imagen2)
+
+                        Glide.with(imagen2).load(it.image).centerCrop().into(imagen2)
                         name2.text = it.name
                         lastPriceEd.text = "Antes " + " " + it.lastPrice
                         descriptionEd.text = "Description" + " " + it.description
                         precioEd2.text = "Precio Oferta solo hoy" + it.price
-                        if (it.credit) {
+                        if (it.credit == true) {
                             creditEd.text = " Tarjeta de Crédito  24 cuotas "
                         } else {
                             creditEd.text = "Solo Precio Contado"

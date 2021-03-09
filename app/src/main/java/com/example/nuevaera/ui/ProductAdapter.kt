@@ -38,7 +38,7 @@ class ProductAdapter : RecyclerView.Adapter<ProductAdapter.ProductVH>() {
                 Glide.with(imageView)
                     .load(productoResponseItem.image)
                     .fitCenter()
-                    .circleCrop()
+                    .centerCrop()
                     .into(imageView)
 
             }

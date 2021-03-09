@@ -1,59 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:focusable="true"
-    android:backgroundTint="@color/teal_700"
+    android:layout_width="400dp"
+    android:backgroundTint="@color/teal_200"
     app:cardCornerRadius="24sp"
+    android:animateLayoutChanges="true"
+    android:padding="6dp"
+    app:cardElevation="8dp"
+    app:cardUseCompatPadding="true"
     android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/nameEd"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="250dp"
-        android:layout_marginStart="250dp"
-        android:layout_marginLeft="200dp"
-        android:layout_marginTop="24dp"
-        android:text="TextView"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
 
-    <TextView
-        android:id="@+id/IDed"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="250dp"
-        android:layout_marginStart="250dp"
-        android:layout_marginTop="160dp"
-        android:text="TextView"
-        android:textColor="@color/black"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/priceEd" />
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/priceEd"
-        android:layout_width="150dp"
-        android:layout_height="34dp"
-        android:layout_marginHorizontal="250dp"
-        android:layout_marginStart="250dp"
-        android:layout_marginTop="100dp"
-        android:text="TextView"
-        android:textColor="@color/black"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/nameEd" />
+        <RelativeLayout
+            android:layout_width="400dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:padding="6dp">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginStart="21dp"
-        android:layout_marginTop="24dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:paddingLeft="14dp"
+                android:paddingRight="14dp"
+                app:srcCompat="@drawable/ic_launcher_foreground" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="4dp"
+                android:layout_toEndOf="@id/imageView"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/nameEd"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/IDed"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+
+                    android:text="TextView"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/priceEd"
+                    android:layout_width="150dp"
+                    android:layout_height="34dp"
+
+                    android:text="TextView"
+                    android:textColor="@color/black" />
+
+
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
 </androidx.cardview.widget.CardView>

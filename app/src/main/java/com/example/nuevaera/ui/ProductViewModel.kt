@@ -23,7 +23,7 @@ class ProductViewModel(application: Application) : AndroidViewModel(application)
         repository = ProductRepository(dao)
         viewModelScope.launch {
             repository.getProductWithCorutines()
-            repository.getProductWithCorutines()
+            repository.getDetailProductWithCourutines()
         }
        productLiveDataFromDataBase = repository.liveDataProductDB
     }
