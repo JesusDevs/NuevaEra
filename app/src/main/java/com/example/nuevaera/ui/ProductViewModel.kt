@@ -21,6 +21,7 @@ class ProductViewModel(application: Application) : AndroidViewModel(application)
     init {
         val dao = ProductDataBase.getDataBase(application).getProductDao()
         repository = ProductRepository(dao)
+        //observando el repo con scope
         viewModelScope.launch {
             repository.getProductWithCorutines()
             repository.getDetailProductWithCourutines()
