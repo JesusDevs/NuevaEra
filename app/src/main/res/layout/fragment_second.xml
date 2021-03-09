@@ -1,102 +1,273 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:backgroundTint="#20677C"
-    android:layout_height="match_parent"
-    tools:context=".ui.SecondFragment">
+    android:backgroundTint="#32A599"
+    app:cardCornerRadius="24sp"
+    android:animateLayoutChanges="true"
+    android:padding="6dp"
+    app:cardElevation="8dp"
+    app:cardUseCompatPadding="true"
+    android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/btnBack"
+
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginBottom="30dp"
-        android:text="volver"
-        app:iconTint="#172B29"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/creditEd" />
+        android:layout_height="519dp"
+        android:animateLayoutChanges="true"
 
-    <ImageView
-        android:id="@+id/imagen_2"
-        android:layout_width="395dp"
-        android:layout_height="261dp"
-        android:layout_marginTop="25dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.441"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:src="@tools:sample/avatars" />
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/precioEd2"
-        android:layout_width="203dp"
-        android:layout_height="26dp"
-        android:layout_marginStart="92dp"
-        android:layout_marginTop="5dp"
-        android:text="TextView"
-        android:textColor="#FFFFFF"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lastPriceEd" />
+        <RelativeLayout
+            android:layout_width="338dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:padding="6dp">
 
-    <TextView
-        android:id="@+id/creditEd"
-        android:layout_width="203dp"
-        android:layout_height="26dp"
-        android:layout_marginStart="92dp"
-        android:layout_marginTop="5dp"
-        android:text="TextView"
-        android:textColor="#FFFFFF"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/precioEd2" />
+            <ImageView
+                android:id="@+id/imagen_2"
+                android:layout_width="357dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="14dp"
+                android:paddingRight="14dp"
+                app:srcCompat="@drawable/ic_launcher_foreground" />
 
-    <TextView
-        android:id="@+id/lastPriceEd"
-        android:layout_width="203dp"
-        android:layout_height="26dp"
-        android:layout_marginStart="92dp"
-        android:layout_marginTop="5dp"
-        android:text="TextView"
-        android:textColor="#E91E63"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/name2" />
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="16dp"
 
-    <TextView
-        android:id="@+id/name2"
-        android:layout_width="203dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="92dp"
-        android:layout_marginTop="5dp"
-        android:text="TextView"
-        android:textColor="#FFFDFD"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/descriptionEd" />
+                android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/descriptionEd"
-        android:layout_width="203dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="92dp"
-        android:layout_marginTop="5dp"
-        android:text="TextView"
-        android:textColor="#FFFFFF"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imagen_2" />
 
-    <Button
-        android:id="@+id/btnBuy"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="30dp"
-        android:text="Comprar"
-        app:iconTint="#293D4E"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/creditEd"
-        app:rippleColor="#CFB5B5" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+                <TextView
+                    android:id="@+id/name2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="26dp"
+                    android:layout_marginStart="92dp"
+                    android:layout_marginTop="165dp"
+                    android:fontFamily="@font/days_one"
+                    android:text="TextView"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="#FFFFFF"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lastPriceEd" />
+
+                <TextView
+                    android:id="@+id/descriptionEd"
+                    android:layout_width="203dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="92dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/days_one"
+                    android:text="TextView"
+                    android:textAlignment="textStart"
+                    android:textColor="#FFFFFF"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/precioEd2" />
+
+                <TextView
+                    android:id="@+id/lastPriceEd"
+                    android:layout_width="203dp"
+                    android:layout_height="26dp"
+                    android:layout_marginStart="92dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/days_one"
+                    android:text="TextView"
+                    android:textAlignment="textStart"
+                    android:textColor="#CDDC39"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/name2" />
+
+                <TextView
+
+                    android:id="@+id/precioEd2"
+                    android:layout_width="203dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="92dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/days_one"
+                    android:text="TextView"
+                    android:textAlignment="textStart"
+                    android:textColor="#E91E63"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/descriptionEd" />
+
+                <TextView
+
+                    android:id="@+id/creditEd"
+                    android:layout_width="203dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="92dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/days_one"
+                    android:text="TextView"
+                    android:textAlignment="textStart"
+                    android:textColor="#FF9800"
+                    android:textSize="8sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imagen_2" />
+
+                <Button
+                    android:id="@+id/btnBuy"
+                    android:layout_width="284dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/days_one"
+                    android:text="Buy"
+                    android:textColor="#FFFFFF"
+                    app:icon="@android:drawable/ic_dialog_email"
+                    app:iconTint="#4CAF50"
+                    app:rippleColor="#DD6D6D" />
+
+                <Button
+                    android:id="@+id/btnBack"
+                    android:layout_width="284dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="3dp"
+                    android:fontFamily="@font/days_one"
+                    android:text="Back"
+                    app:icon="@android:drawable/ic_menu_revert"
+                    app:iconTint="#3AE140"
+                    app:rippleColor="#7E1010" />
+
+
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
+
+
+
+
+
+
+    <!--
+    <?xml version="1.0" encoding="utf-8"?>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:backgroundTint="#20677C"
+        android:layout_height="match_parent"
+        tools:context=".ui.SecondFragment">
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginBottom="30dp"
+            android:text="volver"
+            app:iconTint="#172B29"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/creditEd" />
+
+        <ImageView
+            android:id="@+id/imagen_2"
+            android:layout_width="395dp"
+            android:layout_height="261dp"
+            android:layout_marginTop="25dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.441"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/precioEd2"
+            android:layout_width="203dp"
+            android:layout_height="26dp"
+            android:layout_marginStart="92dp"
+            android:layout_marginTop="5dp"
+            android:text="TextView"
+            android:textColor="#FFFFFF"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lastPriceEd" />
+
+        <TextView
+            android:id="@+id/creditEd"
+            android:layout_width="203dp"
+            android:layout_height="26dp"
+            android:layout_marginStart="92dp"
+            android:layout_marginTop="5dp"
+            android:text="TextView"
+            android:textColor="#FFFFFF"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/precioEd2" />
+ <Button
+                    android:id="@+id/btnBuy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="30dp"
+                    android:text="Comprar"
+                    app:iconTint="#293D4E"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/creditEd"
+                    app:rippleColor="#CFB5B5" />
+
+                <Button
+                    android:id="@+id/btnBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                   android:layout_marginTop="@dimen/cardview_default_radius" />
+        <TextView
+            android:id="@+id/lastPriceEd"
+            android:layout_width="203dp"
+            android:layout_height="26dp"
+            android:layout_marginStart="92dp"
+            android:layout_marginTop="5dp"
+            android:text="TextView"
+            android:textColor="#E91E63"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/name2" />
+
+        <TextView
+            android:id="@+id/name2"
+            android:layout_width="203dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="92dp"
+            android:layout_marginTop="5dp"
+            android:text="TextView"
+            android:textColor="#FFFDFD"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/descriptionEd" />
+
+        <TextView
+            android:id="@+id/descriptionEd"
+            android:layout_width="203dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="92dp"
+            android:layout_marginTop="5dp"
+            android:text="TextView"
+            android:textColor="#FFFFFF"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imagen_2" />
+
+        <Button
+            android:id="@+id/btnBuy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="30dp"
+            android:text="Comprar"
+            app:iconTint="#293D4E"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/creditEd"
+            app:rippleColor="#CFB5B5" />
+    </androidx.constraintlayout.widget.ConstraintLayout>-->

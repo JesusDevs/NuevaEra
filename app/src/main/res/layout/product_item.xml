@@ -22,7 +22,7 @@
             android:layout_height="match_parent"
             android:orientation="horizontal"
             android:padding="6dp">
-
+         
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="70dp"
